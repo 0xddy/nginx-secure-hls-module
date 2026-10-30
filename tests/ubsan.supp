@@ -1,0 +1,4 @@
+# nginx core ngx_init_cycle duplicates an unset (NULL, 0) config string via
+# ngx_pstrdup before any module initialization. This is memcpy(..., NULL, 0).
+# Keep all checks enabled for module code; suppress only this upstream function.
+nonnull-attribute:ngx_pstrdup
